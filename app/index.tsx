@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"; // ← use this one
 import "../global.css";
@@ -9,6 +10,8 @@ export default function Index() {
         <Text className="text-white text-xl font-bold">
           Tailwind is working 🚀
         </Text>
+        <Link href={"/category"}>Category</Link>
+        <Link href={"./product"}>Product</Link>
       </View>
     </SafeAreaView>
   );
