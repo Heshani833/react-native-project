@@ -25,7 +25,17 @@ export default function Index() {
         >
           Amil
         </Link>
-        <Link href={"./product"}>Product</Link>
+        <Link
+          href={{
+            pathname: "./product",
+            params: {
+              name: "Shehana",
+              city: "Ampara",
+            },
+          }}
+        >
+          Product
+        </Link>
       </View>
     </SafeAreaView>
   );
