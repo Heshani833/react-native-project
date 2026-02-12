@@ -8,9 +8,23 @@ export default function Index() {
     <SafeAreaView className="flex-1 bg-pink-500">
       <View className="flex-1 items-center justify-center">
         <Text className="text-white text-xl font-bold">
-          Tailwind is working 🚀
+          Tailwind is working
         </Text>
         <Link href={"/category"}>Category</Link>
+        <Link href={"./products"}>Products</Link>
+        <Link
+          href={{
+            pathname: "./product/[productId]",
+            params: {
+              ProductId: "HIII",
+              name: "Heshani",
+              age: 25,
+              city: "Kandy",
+            },
+          }}
+        >
+          Amil
+        </Link>
         <Link href={"./product"}>Product</Link>
       </View>
     </SafeAreaView>
