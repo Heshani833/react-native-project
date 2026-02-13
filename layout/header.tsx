@@ -1,28 +1,32 @@
+import React from "react";
 import { Text, View } from "react-native";
 
 interface IHeader {
   Left?: React.ReactNode;
+  CenterText?: string;
   Center?: React.ReactNode;
   Right?: React.ReactNode;
 }
 
-const Header = ({ Left, Center, Right }: IHeader) => {
+const Header = ({ Left, CenterText, Center, Right }: IHeader) => {
   return (
     <View
       style={{ elevation: 5 }}
-      className="w-full bg-gray-500 px-5 py-3 flex-row items-center"
+      className="w-full bg-gray-500 px-5 py-3 flex-row items-center justify-between"
     >
-      <View className="flex-1 items-start">
-        {Left ? Left : <Text>Header</Text>}
+      <View>{Left ?? <View />}</View>
+
+      <View>
+        {Center ? (
+          Center
+        ) : CenterText ? (
+          <Text className="text-xl text-black">{CenterText}</Text>
+        ) : (
+          <View />
+        )}
       </View>
 
-      <View className="flex-1 items-center">
-        {Center ? Center : <Text>Header</Text>}
-      </View>
-
-      <View className="flex-1 items-end">
-        {Right ? Right : <Text>Header</Text>}
-      </View>
+      <View>{Right ?? <View />}</View>
     </View>
   );
 };
