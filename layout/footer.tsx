@@ -4,11 +4,11 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { router } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 
-const footer = () => {
+const Footer = () => {
   return (
     <View
       style={{ elevation: 5 }}
-      className=" w-full absolute bottom-0 left-0 z-50 px-5 py-2 flex-row items-center  justify-between bg-blue-500"
+      className="w-full px-5 py-3 flex-row items-center justify-between bg-blue-500"
     >
       <TouchableOpacity
         onPress={() => router.navigate("./")}
@@ -45,4 +45,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;
